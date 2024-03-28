@@ -9,24 +9,22 @@ interface MobileMenuProps {
   isopen: boolean;
   mobile: boolean; 
   toggleMenu: () => void;
-  id: string | undefined
   user: string | undefined
 }
 
 interface NavLinksProps {
   close: () => void;
-  id: string | undefined
   user: string | undefined
 }
 
 // Component for desktop navigation menu
-const DesktopMenu = ({ user, id }: {id: string | undefined, user: string | undefined} ) => {
+const DesktopMenu = ({ user }: {user: string | undefined} ) => {
   return (
     <nav className="flex items-center gap-4">
       <Link href="/createpost" className="hover:opacity-50">
         Create Post
       </Link>
-      <Link href={`/profile/${id}`} className="hover:opacity-50">
+      <Link href={`/profile`} className="hover:opacity-50">
         @{user}
       </Link>
       <button  onClick={async () => {
@@ -41,12 +39,12 @@ const DesktopMenu = ({ user, id }: {id: string | undefined, user: string | undef
 }
 
 // Component for mobile navigation menu links
-const NavLinks: React.FC<NavLinksProps> = ({ close, user, id}) => (
+const NavLinks: React.FC<NavLinksProps> = ({ close, user }) => (
   <nav className="flex flex-col items-start gap-4">
     <Link href="/createpost" onClick={close} className="hover:opacity-50 border-b border-b-primary">
       Create Post
     </Link>
-    <Link href={`/profile/${id}`} onClick={close} className="hover:opacity-50 ">
+    <Link href={`/profile`} onClick={close} className="hover:opacity-50 ">
       @{user}
     </Link>
     <button onClick={async () => {
@@ -59,14 +57,14 @@ const NavLinks: React.FC<NavLinksProps> = ({ close, user, id}) => (
 );
 
 // Component for mobile navigation menu
-const MobileMenu: React.FC<MobileMenuProps> = ({ isopen, mobile, toggleMenu, user, id }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ isopen, mobile, toggleMenu, user }) => {
   return ( 
     <div onClick={toggleMenu} className="cursor-pointer" >
       { mobile && !isopen && <p className="cursor-pointer" onClick={toggleMenu}>Account</p>}
       { isopen && 
       <div className="fixed top-0 left-0 h-full w-full cursor-pointer" onClick={toggleMenu}>
         <div className="absolute shadow h-1/4 w-3/4 top-20 right-0 bg-default px-4 py-4" >
-          <NavLinks close={toggleMenu} id={id} user={user} />   
+          <NavLinks close={toggleMenu} user={user} />   
         </div>
       </div> 
       }
@@ -75,7 +73,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isopen, mobile, toggleMenu, use
 };
 
 // Main navigation component
-export default function Nav ({ user , id} : {user: string | undefined, id: string | undefined}) {
+export default function Nav ({ user } : {user: string | undefined }) {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
@@ -88,11 +86,11 @@ export default function Nav ({ user , id} : {user: string | undefined, id: strin
     >
       {isMobile ? 
         (
-          <MobileMenu mobile={isMobile} isopen={isOpen} toggleMenu={toggleMenu} user={user} id={id}  />
+          <MobileMenu mobile={isMobile} isopen={isOpen} toggleMenu={toggleMenu} user={user}  />
         ) 
         : 
         ( 
-          <DesktopMenu user={user} id={id} />  
+          <DesktopMenu user={user} />  
         ) 
       }
     </div>

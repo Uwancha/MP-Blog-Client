@@ -25,14 +25,13 @@ export async function deletePost(formState: StateType | undefined, formData: For
     // Get authorization token and user ID from cookies
     const cookieStore = cookies()
     const token = cookieStore.get('token')?.value
-    const userId = cookieStore.get('userid')?.value
 
     // Define API URL
     const url = process.env.API_URL || 'http://localhost:5000/';
 
     try {
         // Send request to API
-        const res = await fetch(`${url}api/posts/${postId}/${userId}`, {
+        const res = await fetch(`${url}api/posts/${postId}`, {
             method: 'DELETE',
             headers: {
               'Authorization': `Bearer ${token}`

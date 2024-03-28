@@ -34,7 +34,7 @@ export async function UpdateBio(formState: StateType | undefined, formData: Form
 
     try {
         // Send request to the API
-        const res = await fetch(`${url}api/profile/${userId}/bio`, {
+        const res = await fetch(`${url}api/profile/bio`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',

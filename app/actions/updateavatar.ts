@@ -34,7 +34,7 @@ export async function updateAvatar(formState: StateType | undefined, formData: F
 
     try {
         // Send request to the API
-        const res = await fetch(`${url}api/profile/${userId}/avatar`, {
+        const res = await fetch(`${url}api/profile/avatar`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',

@@ -9,7 +9,7 @@ import Update from "@/app/forms/updateBio";
 import DeletePost from "@/app/forms/deletePostForm";
 
 // Function to fetch user profile data
-const GetProfile = async (id: string) => {
+const GetProfile = async () => {
     // Get token from cookies
     const cookieStore = cookies();
     const token= cookieStore.get('token')?.value;
@@ -19,7 +19,7 @@ const GetProfile = async (id: string) => {
         const url = process.env.API_URL || 'http://localhost:5000/';
 
         // Fetch profile information from the API
-        const res = await fetch(`${url}api/profile/${id}`, {
+        const res = await fetch(`${url}api/profile`, {
           method: "GET",
           headers: {
             'Authorization': `Bearer ${token}`
@@ -45,9 +45,9 @@ const GetProfile = async (id: string) => {
 };
 
 // Component to display user profile
-export default async function Profile({ params } : {params : {profile : string}}) {
+export default async function Profile() {
     // Fetch profile information
-    const profile = await GetProfile(params.profile);
+    const profile = await GetProfile();
 
     // Redirect to login if no user exists
     if (!profile) {

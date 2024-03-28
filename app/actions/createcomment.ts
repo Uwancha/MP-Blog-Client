@@ -29,14 +29,13 @@ export async function CreateComment(formState: StateType | undefined, formData: 
     // Get authorization token from cookies
     const cookieStore = cookies()
     const token = cookieStore.get('token')?.value
-    const userId = cookieStore.get('userid')?.value
 
     // Define API URL
     const url = process.env.API_URL || 'http://localhost:5000/';
 
     try {
         // Send request to API
-        const res = await fetch(`${url}api/comments/${postId}/${userId}`, {
+        const res = await fetch(`${url}api/comments/${postId}`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

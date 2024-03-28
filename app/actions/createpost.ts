@@ -57,7 +57,7 @@ export async function CreatePost(formState: StateType | undefined, formData: For
 
     try {
         // Send request with post fields
-        const res = await fetch(`${url}api/posts/660324a2c4b9ec32b1935d86`, {
+        const res = await fetch(`${url}api/posts`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

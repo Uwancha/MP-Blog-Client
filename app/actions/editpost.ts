@@ -53,14 +53,13 @@ export async function EditPost(formState: StateType | undefined, formData: FormD
     // Get authorization token and user ID from cookies
     const cookieStore = cookies()
     const token = cookieStore.get('token')?.value
-    const userId = cookieStore.get('userid')?.value
 
     // Define API URL
     const url = process.env.API_URL || 'http://localhost:5000/';
 
     try {
         // Send request with post fields
-        const res = await fetch(`${url}api/posts/${postId}/${userId}`, {
+        const res = await fetch(`${url}api/posts/${postId}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
