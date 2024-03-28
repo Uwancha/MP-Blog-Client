@@ -55,6 +55,9 @@ npm install
 ```bash
 npm run dev
 ```
+
+I used Next.js app router. If you are not familiar with app router(If you've been using page router), take a quick look at it here [Next.js-App-Router-Docs](https://nextjs.org/docs)
+
 ## Folder Structure
 ```csharp
 
