@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 // Define form state's interface
 export interface StateType {
@@ -45,11 +46,8 @@ export async function deletePost(formState: StateType | undefined, formData: For
         // Handle success response
         if (res.status === 204) {
             // Revalidate user profile data
-            revalidatePath(`/profile/${userId}`)
-            return {
-                success: true,
-                message: 'Post deleted'
-            };
+            revalidatePath(`/profile`)
+            redirect(`/profile`)
         } else if(res.status === 401 || res.status === 403 ) {
             // Handle invalid token
             return {

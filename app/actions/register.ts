@@ -1,5 +1,7 @@
 'use server';
 
+import { redirect } from "next/navigation";
+
 // Define form state's interface/type
 export interface StateType {
     success?: boolean | undefined;
@@ -63,10 +65,7 @@ export async function RegisterUser(formState: StateType | undefined, formData: F
 
         // Handle success response
         if (res.status === 200) {
-            console.log(data)
-            return {
-                success: true
-            };
+            redirect('/');
         } else {
             if(res.status === 409) {
                 // Handle if user with the given user name already exists

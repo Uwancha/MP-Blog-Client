@@ -1,6 +1,7 @@
 'use server';
 
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 // Define form state's interface/type
 export interface StateType {
@@ -80,9 +81,7 @@ export const LoginUser = async (state: StateType | undefined, formData: FormData
                 maxAge: 3600 
             });
 
-            return {
-                success: true,
-            };
+            redirect('/');
         } else if (res.status === 404) {
             // Handle not found error
             return {
