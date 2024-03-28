@@ -11,7 +11,7 @@ export default function Login () {
     const [ formState, action ] = useFormState(LoginUser, { success: false, message: '' } )
 
     // Check if login is successful and redirect a user
-    if (formState.success) {
+    if (formState?.success) {
         return redirect('/');
     };
     
@@ -42,7 +42,7 @@ export default function Login () {
                             focus:outline-none focus:ring-1 focus:ring-primary"
                         />
                         {/* Display if error exists for username field */}
-                        <span className='text-red-500 text-sm pl-2'>{formState.error?.username}</span>
+                        <span className='text-red-500 text-sm pl-2'>{formState?.error?.username}</span>
                     </label>
                     <label htmlFor='password'
                         className='flex flex-col gap-2 mb-2'
@@ -57,10 +57,10 @@ export default function Login () {
                             focus:outline-none focus:ring-1 focus:ring-primary" 
                         />
                         {/* Display if error exists for password */}
-                        <span className='text-red-500 text-sm pl-2'>{formState.error?.password}</span>
+                        <span className='text-red-500 text-sm pl-2'>{formState?.error?.password}</span>
                     </label>
                     {/* Display default form error message */}
-                    <p>{formState.message}</p>
+                    <p>{formState?.message}</p>
                     <button type="submit" className="text-primary btn-shadow rounded-sm py-2 ">
                         Login
                     </button>
