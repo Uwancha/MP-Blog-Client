@@ -81,7 +81,9 @@ export const LoginUser = async (state: StateType | undefined, formData: FormData
                 maxAge: 3600 
             });
 
-            redirect('/');
+            return {
+                success: true
+            }
         } else if (res.status === 404) {
             // Handle not found error
             return {

@@ -65,7 +65,9 @@ export async function RegisterUser(formState: StateType | undefined, formData: F
 
         // Handle success response
         if (res.status === 200) {
-            redirect('/');
+            return {
+                success: true
+            };
         } else {
             if(res.status === 409) {
                 // Handle if user with the given user name already exists
