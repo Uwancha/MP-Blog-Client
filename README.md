@@ -49,6 +49,9 @@ Install dependencies
 npm install
 ```
 
+- **Alternatively:** you can download the zip file, extract it and follow the next steps.
+
+
 - Set up environment variables by creating a .env.local file and adding the necessary variables (API_URL for the backend API URL).
 
 - Run the development server using npm run dev.
