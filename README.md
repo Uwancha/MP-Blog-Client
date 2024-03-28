@@ -85,7 +85,7 @@ The application can be deployed to various platforms like Vercel, Netlify. Make 
 ## Contributing
 Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
 
-## Contributing
+## Contributer
 [Sitota Alemu](https://github.com/Uwancha)
 
 ## License
