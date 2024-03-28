@@ -28,7 +28,7 @@ Front End of Blog App! This application provides a user interface for interactin
 - **Fetch API:** The Fetch API is used to make HTTP requests to the backend API endpoints.
 
 ## UI Design(Figma)
-You will find the simple UI design of the app (here)[https://www.figma.com/file/DCuEtItcMA6HinZgzXEfC3/MyProff?type=design&node-id=1%3A86&mode=design&t=gFaDbhvvJJchKnpU-1]
+You will find the simple UI design of the app [here](https://www.figma.com/file/DCuEtItcMA6HinZgzXEfC3/MyProff?type=design&node-id=1%3A86&mode=design&t=gFaDbhvvJJchKnpU-1)
 
 ## Future Improvements
 Features to be implemented
