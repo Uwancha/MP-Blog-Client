@@ -42,7 +42,7 @@ To run the application locally, follow these steps:
 
 - Clone this repository:
 ```bash
-    git clone <repository-url>
+git clone <repository-url>
 ```
 Install dependencies
 ```bash
@@ -86,4 +86,4 @@ Contributions are welcome! If you find any bugs or have suggestions for improvem
 [Sitota Alemu](https://github.com/Uwancha)
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
