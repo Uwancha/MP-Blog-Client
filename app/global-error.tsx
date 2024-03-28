@@ -13,12 +13,16 @@ export default function GlobalError({
   return (
     <html>
       <body>
-      <div className="flex justify-between px-8 py-8">
-        <Link href={'/'} className="text-primary text-2xl font-bold">MP</Link> 
-        <Link href={'/register'} className='text-2xl text-primary font-bold'>X</Link> 
+      {/* Brand logo */}
+      <div className="py-4 shadow-sm">
+        <Link href={'/'} className="pl-16 text-primary text-xl sm:text-3xl font-bold">MP</Link> 
       </div>
-        <h2>Something went wrong!</h2>
-        <button onClick={() => reset()}>Try again</button>
+
+        <div className="w-1/4 mx-auto mt-40">
+          <h2>Something went wrong!</h2>
+          <button onClick={() => reset()} className="text-primary">Try again</button>
+        </div>
+
       </body>
     </html>
   )
