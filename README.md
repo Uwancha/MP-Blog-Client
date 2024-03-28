@@ -27,6 +27,9 @@ Front End of Blog App! This application provides a user interface for interactin
 
 - **Fetch API:** The Fetch API is used to make HTTP requests to the backend API endpoints.
 
+## UI Design(Figma)
+You will find the simple UI design of the app (here)[https://www.figma.com/file/DCuEtItcMA6HinZgzXEfC3/MyProff?type=design&node-id=1%3A86&mode=design&t=gFaDbhvvJJchKnpU-1]
+
 ## Future Improvements
 Features to be implemented
 
@@ -46,21 +49,30 @@ Install dependencies
 npm install
 ```
 
-- Set up environment variables by creating a .env.local file and adding the necessary variables (e.g., API_URL for the backend API URL).
+- Set up environment variables by creating a .env.local file and adding the necessary variables (API_URL for the backend API URL).
 
 - Run the development server using npm run dev.
-
+```bash
+npm run dev
+```
 ## Folder Structure
 ```csharp
 
 MP-Blog-Client/
 │
-├── app/                # Next.js App router
-├── app/components/     # Components
-├── app/forms/          # Form components
-├── app/actions         # Next.js server actions
-├── globals.css/        # CSS stylesheets
-├── public/             # Static assets
+├── app/                        # Next.js App router
+├── app/actions/                # Next.js server actions
+├── app/components/             # Form components
+├── app/createpost              # Post creating page
+├── app/forms                   # Form components
+├── app/login                   # Login page component
+├── app/posts/                  # Dynamic Post detail page
+├── app/profile/                # User profile page 
+├── app/register/               # User registration page component
+├── app/page.tsx                # Home/Landing page component
+├── globals.css/                # Global custom css classes
+├── public/                     # Static assets
+├── README.md                   # Project README and others
 └── 
 ```
 
