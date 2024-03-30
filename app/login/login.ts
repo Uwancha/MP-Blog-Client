@@ -15,8 +15,8 @@ export interface StateType {
 export const LoginUser = async (state: StateType | undefined, formData: FormData) => {
     // Extract user credentials from form data
     const credentials = {
-        username: formData.get('username'),
-        password: formData.get('password')
+        username: formData?.get('username'),
+        password: formData?.get('password')
     }
   
     // Validate user credentials
