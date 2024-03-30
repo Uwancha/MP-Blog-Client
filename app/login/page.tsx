@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useFormState } from "react-dom";
-import { LoginUser } from "../actions/login";
+import { LoginUser } from "./login";
 
 // Login page component
 export default function Login () {
