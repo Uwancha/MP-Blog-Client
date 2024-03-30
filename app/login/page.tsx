@@ -3,17 +3,11 @@
 import Link from "next/link";
 import { useFormState } from "react-dom";
 import { LoginUser } from "../actions/login";
-import { redirect } from "next/navigation";
 
 // Login page component
 export default function Login () {
     // Form state and server action to handle logging a user in
     const [ formState, action ] = useFormState(LoginUser, { success: false, message: '' } )
-
-    // Check if login is successful and redirect a user
-    if (formState?.success) {
-        return redirect('/');
-    };
     
     return (
         <>

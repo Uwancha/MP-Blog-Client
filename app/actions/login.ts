@@ -81,9 +81,6 @@ export const LoginUser = async (state: StateType | undefined, formData: FormData
                 maxAge: 3600 
             });
 
-            return {
-                success: true
-            }
         } else if (res.status === 404) {
             // Handle not found error
             return {
@@ -109,4 +106,7 @@ export const LoginUser = async (state: StateType | undefined, formData: FormData
             message: 'Something went wrong. Try again!'
         };
     };
+
+    // Redirect user to profile page after loggin in
+    redirect('/profile');
 };
