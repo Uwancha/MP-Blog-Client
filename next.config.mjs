@@ -3,20 +3,20 @@ const nextConfig = {
     experimental: {
         serverActions: {
             allowedOrigins: [
-            process.env.DOMAIN, 
-            process.env.DOMAIN.endsWith('/') ? 
-                `${process.env.DOMAIN}login` 
+            process.env.NEXT_PUBLIC_DOMAIN, 
+            process.env.NEXT_PUBLIC_DOMAIN.endsWith('/') ? 
+                `${process.env.NEXT_PUBLIC_DOMAIN}login` 
                 : 
-                `${process.env.DOMAIN}/login`, 
+                `${process.env.NEXT_PUBLIC_DOMAIN}/login`, 
             
-            process.env.DOMAIN.endsWith('/') ? 
-                `${process.env.DOMAIN}register` 
+            process.env.NEXT_PUBLIC_DOMAIN.endsWith('/') ? 
+                `${process.env.NEXT_PUBLIC_DOMAIN}register` 
                 : 
-                `${process.env.DOMAIN}/register`,
-            process.env.DOMAIN.endsWith('/') ? 
-                `${process.env.DOMAIN}profile` 
+                `${process.env.NEXT_PUBLIC_DOMAIN}/register`,
+            process.env.NEXT_PUBLIC_DOMAIN.endsWith('/') ? 
+                `${process.env.NEXT_PUBLIC_DOMAIN}profile` 
                 : 
-                `${process.env.DOMAIN}/profile`,
+                `${process.env.NEXT_PUBLIC_DOMAIN}/profile`,
             ],
         },
     },
