@@ -3,6 +3,7 @@
 import { useFormState } from "react-dom";
 import { RegisterUser } from "../actions/register";
 import Link from "next/link";
+import { SubmitButton } from "../components/submitButton";
 
 // Registration page component
 export default function Register() {
@@ -74,9 +75,7 @@ export default function Register() {
 
                 {/* Display any errors occurs during registeration */}
                 <p className="text-red">{formState?.message}</p>
-                <button type='submit' className="text-primary btn-shadow rounded-sm py-2 "> 
-                    Register
-                </button>
+                <SubmitButton text={"Register"} pendingStatusText={"Registering.."} />
             </form>
             <p className='text-sm my-4'>
                 Already registered? <Link href='/login' className='text-primary'>Login</Link>

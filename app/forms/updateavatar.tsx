@@ -2,6 +2,7 @@
 
 import { updateAvatar } from "@/app/actions/updateavatar";
 import { useFormState } from "react-dom";
+import { SubmitButton } from "../components/submitButton";
 
 // Compone to update a user's avatar
 export default function UpdateAvatar() {
@@ -32,7 +33,7 @@ export default function UpdateAvatar() {
                 </label>
                 {/* Display any error that occurs during avatar updating */}
                 <p className='text-red-500 text-sm pl-2'>{formState?.message}</p>
-                <button type="submit" className='w-1/4 btn-shadow rounded-lg text-primary py-2'>Submit</button>
+                <SubmitButton text={"Update"} pendingStatusText={"Updating..."} />
             </form>
         </div>
     );

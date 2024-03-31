@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { CreatePost } from '../actions/createpost';
 import { useFormState } from 'react-dom';
+import { SubmitButton } from '../components/submitButton';
 
 export default function BlogPostForm() {
     // Form state and server action to handle post creation
@@ -52,7 +53,7 @@ export default function BlogPostForm() {
                     </label>
                     {/* Display any error that occurs during post creation*/}
                     <span className="text-red-500 text-sm pl-2">{formState?.message}</span>
-                    <button type="submit" className='btn-shadow rounded-lg text-primary py-2'>Submit</button>
+                    <SubmitButton text={"Publish"} pendingStatusText={"Publishing.."} />
                 </form>
             </main>
         </>

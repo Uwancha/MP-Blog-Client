@@ -2,6 +2,7 @@
 
 import { CreateComment } from "@/app/actions/createcomment";
 import { useFormState } from "react-dom";
+import { SubmitButton } from "../components/submitButton";
 
 // Component to create a comment in a post
 export default function AddComment({ postid } :{ postid: string} ) {
@@ -20,7 +21,7 @@ export default function AddComment({ postid } :{ postid: string} ) {
                 </label>
                 {/* Display any error that occurs during comment creation */}
                 <p>{formState?.message}</p>
-                <button type="submit" className='w-1/4 btn-shadow rounded-lg text-primary py-2'>Submit</button>
+                <SubmitButton text={"Post"} pendingStatusText={"Posting..."} />
             </form>
         </div>
     )

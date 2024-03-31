@@ -2,6 +2,7 @@
 
 import { UpdateBio } from "@/app/actions/updateBio";
 import { useFormState } from "react-dom";
+import { SubmitButton } from "../components/submitButton";
 
 // Component to update a user bio
 export default function Update() {
@@ -24,7 +25,7 @@ export default function Update() {
                 </label>
                 {/* Display any error that occurs during bio updating */}
                 <p>{formState?.message}</p>
-                <button type="submit" className='w-1/4 btn-shadow rounded-lg text-primary py-2'>Submit</button>
+                <SubmitButton text={"Update"} pendingStatusText={"Updating..."} />
             </form>
         </div>
     );

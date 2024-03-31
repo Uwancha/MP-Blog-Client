@@ -2,6 +2,7 @@
 
 import { useFormState } from 'react-dom';
 import { EditPost } from '../actions/editpost';
+import { SubmitButton } from '../components/submitButton';
 
 // Component to edit a post
 export function EditPostForm({ post } : {post : {title: string, _id: string, body: string}}) {
@@ -52,7 +53,7 @@ export function EditPostForm({ post } : {post : {title: string, _id: string, bod
                 </label>
                 {/* Display any error that occurs during post edition*/}
                 <span className="text-red-500 text-sm pl-2">{formState?.message}</span>
-                <button type="submit" className='btn-shadow rounded-lg text-primary py-2'>Submit</button>
+                <SubmitButton text={"Edit"} pendingStatusText={"Editing..."} />
             </form>
         </div>
     );

@@ -2,6 +2,7 @@
 
 import { deletePost } from "@/app/actions/deletepost";
 import { useFormState } from "react-dom";
+import { SubmitButton } from "../components/submitButton";
 
 // Component to delete a post
 export default function DeletePost({ id }: { id: string }) {
@@ -22,7 +23,7 @@ export default function DeletePost({ id }: { id: string }) {
                 <p className="my-8">You wanna delete this post?</p>
                 {/* Display any error that occurs during post deletion */}
                 <p >{formState?.message}</p>
-                <button type="submit" className='w-1/4 btn-shadow rounded-lg text-primary py-2'>Delete</button>
+                <SubmitButton text={"Delete"} pendingStatusText={"Deleting..."} />
             </form>
         </div>
     );

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useFormState } from "react-dom";
 import { LoginUser } from "./login";
+import { SubmitButton } from "../components/submitButton";
 
 // Login page component
 export default function Login () {
@@ -55,9 +56,8 @@ export default function Login () {
                     </label>
                     {/* Display default form error message */}
                     <p>{formState?.message}</p>
-                    <button type="submit" className="text-primary btn-shadow rounded-sm py-2 ">
-                        Login
-                    </button>
+                    
+                    <SubmitButton text={"Login"} pendingStatusText={"Logging..."}  />
                 </form>
                 <p className='text-sm my-4'>
                     Not registered yet? <Link href='/register' className='text-primary'>Register</Link>
