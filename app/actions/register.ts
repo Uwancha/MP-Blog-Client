@@ -89,5 +89,5 @@ export async function RegisterUser(formState: StateType | undefined, formData: F
     };
     
     // Redirect user to login page after registration
-    redirect('/login');
+    redirect('/');
 };
