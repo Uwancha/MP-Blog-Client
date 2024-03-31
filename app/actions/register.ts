@@ -65,9 +65,7 @@ export async function RegisterUser(formState: StateType | undefined, formData: F
 
         // Handle success response
         if (res.status === 200) {
-            return {
-                success: true
-            };
+            console.log('Registered');
         } else {
             if(res.status === 409) {
                 // Handle if user with the given user name already exists
@@ -89,4 +87,7 @@ export async function RegisterUser(formState: StateType | undefined, formData: F
             message: 'Something went wrong. Try again!'
         };
     };
+    
+    // Redirect user to login page after registration
+    redirect('/login');
 };

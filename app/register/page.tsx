@@ -1,7 +1,6 @@
 'use client'
 
 import { useFormState } from "react-dom";
-import { redirect } from "next/navigation";
 import { RegisterUser } from "../actions/register";
 import Link from "next/link";
 
@@ -9,11 +8,6 @@ import Link from "next/link";
 export default function Register() {
     // Form state and server action to handle registration
     const [formState, formAction] = useFormState(RegisterUser, { message: '' });
-
-    // Redirect user to login page after registering
-    if (formState?.success) {
-        redirect('/login');
-    };
 
     return (
         <>
