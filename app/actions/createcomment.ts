@@ -49,12 +49,7 @@ export async function CreateComment(formState: StateType | undefined, formData: 
 
         // Handle success response
         if (res.status === 200) {
-
-            // Revalidate a posts fetched data
-            revalidatePath(`/posts/${postId}`)
-            return {
-                success: true
-            };
+            console.log('Commented added!');
         } else if(res.status === 422) {
             // Handle validation error
             return {
@@ -82,5 +77,11 @@ export async function CreateComment(formState: StateType | undefined, formData: 
         return {
             message: 'Something went wrong. Try again!'
         };
+    };
+
+    // Revalidate a posts fetched data
+    revalidatePath(`/posts/${postId}`)
+    return {
+        success: true
     };
 };

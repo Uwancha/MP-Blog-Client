@@ -45,9 +45,7 @@ export async function deletePost(formState: StateType | undefined, formData: For
 
         // Handle success response
         if (res.status === 204) {
-            // Revalidate user profile data
-            revalidatePath(`/profile`)
-            redirect(`/profile`)
+            console.log('Post deleted');
         } else if(res.status === 401 || res.status === 403 ) {
             // Handle invalid token
             return {
@@ -69,5 +67,12 @@ export async function deletePost(formState: StateType | undefined, formData: For
         return {
             message: 'Something went wrong. Try again!'
         };
+    };
+
+    // Revalidate user profile data
+    revalidatePath(`/profile`);
+    // Return success to true
+    return {
+        success: true
     };
 };

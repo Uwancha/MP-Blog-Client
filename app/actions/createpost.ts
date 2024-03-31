@@ -1,5 +1,6 @@
 'use server';
 
+import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
 // Define form state's interface
@@ -71,9 +72,7 @@ export async function CreatePost(formState: StateType | undefined, formData: For
 
         // Handle success response
         if (res.status === 200) {
-            return {
-                success: true
-            };
+            console.log('Post created')
         } else if(res.status === 422) {
             // Handle validation error
             return {
@@ -91,5 +90,10 @@ export async function CreatePost(formState: StateType | undefined, formData: For
         return {
             message: 'Something went wrong. Try again!'
         };
+    };
+
+    revalidatePath('/');
+    return {
+        success: true
     };
 };

@@ -1,5 +1,6 @@
 'use server';
 
+import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
 // Define form state's interface
@@ -73,9 +74,7 @@ export async function EditPost(formState: StateType | undefined, formData: FormD
 
         // Handle success response
         if (res.status === 200) {
-            return {
-                success: true
-            };
+            console.log('Post edited!')
         } else if(res.status === 422) {
             // Handle validation error
             return {
@@ -103,5 +102,10 @@ export async function EditPost(formState: StateType | undefined, formData: FormD
         return {
             message: 'Something went wrong. Try again!'
         };
+    };
+
+    revalidatePath('/profile');
+    return {
+        success: true
     };
 };

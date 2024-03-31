@@ -45,12 +45,7 @@ export async function updateAvatar(formState: StateType | undefined, formData: F
 
         // Handle success response
         if (res.status === 200) {
-            // Revalidate fetched data in the user profile
-            revalidatePath(`/profile/${userId}`)
-            return {
-                success: true,
-                message: 'Avatar updated'
-            };
+            console.log('Avatar updated!')
         } else if(res.status === 422) {
             // Handle validation error
             return {
@@ -74,5 +69,12 @@ export async function updateAvatar(formState: StateType | undefined, formData: F
         return {
             message: 'Something went wrong. Try again!'
         };
+    };
+
+    // Revalidate fetched data in the user profile
+    revalidatePath(`/profile`)
+    return {
+        success: true,
+        message: 'Avatar updated'
     };
 };

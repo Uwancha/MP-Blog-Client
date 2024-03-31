@@ -44,12 +44,7 @@ export async function UpdateBio(formState: StateType | undefined, formData: Form
         });
     
         if (res.status === 200) {
-            // Revalidate fetched data in the user profile
-            revalidatePath(`/profile/${userId}`)
-            return {
-                success: true,
-                message: 'Bio updated'
-            };
+            console.log('Bio updated')
         } else if(res.status === 422) {
             // Handle validation error
             return {
@@ -71,5 +66,12 @@ export async function UpdateBio(formState: StateType | undefined, formData: Form
         return {
             message: 'Something went wrong. Try again!'
         };
+    };
+
+    // Revalidate fetched data in the user profile
+    revalidatePath(`/profile`)
+    return {
+        success: true,
+        message: 'Bio updated'
     };
 };
