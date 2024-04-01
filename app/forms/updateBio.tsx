@@ -11,13 +11,13 @@ export default function Update() {
 
     // Display success message if bio updated
     if (formState?.success) {
-        return <p className="w-3/4 mx-auto mt-16">{formState.message}</p>
+        return <p className="sm:w-3/4 mx-auto mt-16 py-8">{formState.message}</p>
     };
 
     return (
-        <div className="w-3/4 mx-auto mt-16">
-            <form action={action} className='w-full px-8 flex flex-col'>
-                <legend className='text-xl font-semi-bold text-primary'>Update Bio</legend>
+        <div className="sm:w-2/4 mx-auto mt-16">
+            <form action={action} className='w-full px-8 flex flex-col gap-8'>
+                <legend className='text-xl font-bold text-primary'>Update Bio</legend>
                 <label className=''>
                     <textarea name="bio" required className='w-full bg-inputbg font-light px-4 py-2 rounded-lg
                         focus:outline-none focus:ring-1 focus:ring-primary'

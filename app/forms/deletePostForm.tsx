@@ -17,7 +17,7 @@ export default function DeletePost({ id }: { id: string }) {
     return (
         <div className="mt-16">
             <form action={action} className='w-full px-8 flex flex-col'>
-                <legend className='text-xl font-semi-bold text-primary'>Update Bio</legend>
+                <legend className='text-xl font-bold text-primary'>Delete Post</legend>
 
                 <input type="text" name="postId" value={id} hidden readOnly />
                 <p className="my-8">You wanna delete this post?</p>

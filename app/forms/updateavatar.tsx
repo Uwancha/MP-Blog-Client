@@ -15,9 +15,9 @@ export default function UpdateAvatar() {
     };
 
     return (
-        <div className="w-3/4 mx-auto mt-16">
-            <form action={action} className='w-full px-8 flex flex-col'>
-                <legend className='text-xl font-semi-bold text-primary'>Update Bio</legend>
+        <div className="sm:w-2/4 mx-auto mt-16 py-8">
+            <form action={action} className='w-full px-8 flex flex-col gap-8'>
+                <legend className='text-xl text-center font-bold text-primary '>Update Avatar</legend>
                 <label htmlFor='file'
                     className='flex flex-col gap-2'
                 >

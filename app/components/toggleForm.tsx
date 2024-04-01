@@ -15,7 +15,7 @@ export default function ToggleForm({children, text}:{children: React.ReactNode, 
             {/* Conditional rendering based on text prop */}
             {text === 'Delete' ? 
             (
-                <div className="sm:w-3/4 mx-auto">
+                <div className="sm:w-3/4 mx-auto px-4">
                     <button onClick={toggleForm} type='button' className='px-4 btn-shadow rounded-lg text-primary py-2'>
                     {text}
                     </button>
@@ -27,7 +27,7 @@ export default function ToggleForm({children, text}:{children: React.ReactNode, 
             
             {/* Conditional rendering based on openForm state */}
             {openForm ? (
-                <div className='w-full h-screen overflow-scroll fixed z-100 top-0 bg-default/90 py-10'> 
+                <div className='w-full h-screen overflow-scroll fixed z-100 top-0 bg-default py-10'> 
                     <button className="w-3/4 text-right text-primary text-xl" onClick={toggleForm} >
                         Cancel
                     </button>
