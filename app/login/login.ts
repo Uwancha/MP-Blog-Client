@@ -108,5 +108,5 @@ export const LoginUser = async (state: StateType | undefined, formData: FormData
     };
 
     // Redirect user to profile page after loggin in
-    redirect('/');
+    redirect('/profile');
 };
