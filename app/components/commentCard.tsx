@@ -24,7 +24,7 @@ export default function CommentCard({ comment }:{ comment: Comment }) {
     <section className="mx-8 sm:w-3/4 lg:w-1/2 sm:mx-auto font-light shadow px-4 py-8 mb-5 mt-8 rounded-lg" >
         <div className="flex items-center gap-4" >
             {/* Display author's profile image or avatar */}
-            {comment.author.profile.avatar ? 
+            {comment.author?.profile?.avatar ? 
                 ( 
                     <Image src={`${comment.author.profile.avatar}`} width={50} height={50} className="" alt="Profile image or avatar" /> 
                 ): (
