@@ -63,7 +63,7 @@ export default async function Profile() {
             
             {/* Main component */}
             <main className="pb-16 pt-8 bg-inputbg">
-                <div className="shadow sm:mx-16 pl-4 py-8 flex flex-col gap-4 bg-default/80">
+                <div className="shadow py-8 flex flex-col gap-4 bg-default/80">
                     <section className="mx-4 sm:w-3/4 sm:mx-auto flex gap-8 items-center">
                         {profile.data.user.avatar ? ( <Image src={`${profile.data.user.avatar}`} width={50} height={50} className="" alt="Profile image or avatar" /> ): (<Image src={'/person-circle-sharp.svg'} width={50} height={50} className="" alt="Profile image or avatar" />)}
                         <p className="text-xl text-primary">{profile.data.user.username}</p>
