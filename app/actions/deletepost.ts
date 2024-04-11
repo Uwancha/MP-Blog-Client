@@ -2,7 +2,6 @@
 
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 
 // Define form state's interface
 export interface StateType {
@@ -69,8 +68,11 @@ export async function deletePost(formState: StateType | undefined, formData: For
         };
     };
 
-    // Revalidate user profile data
+    // Revalidate user profile data and all post's data after deleting the post
     revalidatePath(`/profile`);
+    revalidatePath(`/`);
+    revalidatePath(`/posts/${postId}`);
+
     // Return success to true
     return {
         success: true

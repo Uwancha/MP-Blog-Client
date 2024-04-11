@@ -104,7 +104,11 @@ export async function EditPost(formState: StateType | undefined, formData: FormD
         };
     };
 
+    // Validate user profile data and a post's data after editing the post
     revalidatePath('/profile');
+    revalidatePath('/');
+    revalidatePath(`/posts/${postId}`);
+
     return {
         success: true
     };
