@@ -11,12 +11,6 @@ export default function Register() {
     const [formState, formAction] = useFormState(RegisterUser, { message: '' });
 
     return (
-        <>
-        {/* Brand logo */}
-        <div className="py-4 shadow-lg">
-            <Link href={'/'} className="pl-16 text-primary text-xl sm:text-3xl font-bold">MP</Link> 
-        </div> 
-        {/* Main component */}
         <main className='bg-inputbgsecond flex flex-col mx-8 mt-16 mb-20 px-8 py-8
             sm:w-2/4 sm:mx-auto sm:my-20 sm:p-10 lg:w-1/4'
         >
@@ -81,6 +75,5 @@ export default function Register() {
                 Already registered? <Link href='/login' className='text-primary'>Login</Link>
             </p>
         </main>
-        </>
-    )
-}
+    );
+};

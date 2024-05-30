@@ -1,4 +1,3 @@
-import Header from '@/app/components/header'
 import { format } from 'date-fns'
 import Image from 'next/image'
 import React from 'react'
@@ -47,50 +46,45 @@ export default async function Post({params} : {params: {postid: string}}) {
     const formatedDate = format(post.data.createdAt, dateFormat)
 
     return (
-        <>
-            {/* Header component */}
-            <Header />
-            {/* Main component */}
-            <main className='flex flex-col gap-4 mt-12 mb-16'>
-                <section className='w-full mx-8 sm:w-3/4 lg:w-1/2 sm:mx-auto flex items-center gap-8'>
-                    {/* Display author avatar */}
-                    {post.data.author.profile.avatar ? 
-                        ( 
-                            <Image src={`${post.data.author.profile.avatar}`} width={50} height={50} className="" alt="Profile image or avatar" /> 
-                        ): (
-                            <Image src={'/person-circle-sharp.svg'} width={50} height={50} className="" alt="Profile image or avatar" />
-                        )
-                    }
-                    <div className="flex flex-col" >
-                        {/* Display author user name */}
-                        <p className='text-blacklish sm:font-bold mb-.5' >{post.data.author.username}</p>
-                        {/* Display post creation date */}
-                        <p className='text-blacklish' >{formatedDate}</p>
-                    </div>
-                </section>
-                <section className='mx-8 sm:w-3/4 lg:w-1/2 sm:mx-auto my-8'>
-                    {/* Display post title */}
-                    <h1 className='text-xl font-semi-bold mb-12'>{post.data.title}</h1>
+        <main className='flex flex-col gap-4 mt-12 mb-16'>
+            <section className='w-full mx-8 sm:w-3/4 lg:w-1/2 sm:mx-auto flex items-center gap-8'>
+                {/* Display author avatar */}
+                {post.data.author.profile.avatar ? 
+                    ( 
+                        <Image src={`${post.data.author.profile.avatar}`} width={50} height={50} className="" alt="Profile image or avatar" /> 
+                    ): (
+                        <Image src={'/person-circle-sharp.svg'} width={50} height={50} className="" alt="Profile image or avatar" />
+                    )
+                }
+                <div className="flex flex-col" >
+                    {/* Display author user name */}
+                    <p className='text-blacklish sm:font-bold mb-.5' >{post.data.author.username}</p>
+                    {/* Display post creation date */}
+                    <p className='text-blacklish' >{formatedDate}</p>
+                </div>
+            </section>
+            <section className='mx-8 sm:w-3/4 lg:w-1/2 sm:mx-auto my-8'>
+                {/* Display post title */}
+                <h1 className='text-xl font-semi-bold mb-12'>{post.data.title}</h1>
             
-                    {/* Display post content */}
-                    {bodyParts.map((part: string,index: number) => (
-                        <article key={index} className='font-light my-4'>
-                            { part }
-                        </article>
-                    ))}
-                </section>
-                <section className='mt-16'>
-                    {/* Render form to add a comment to the post */}
-                    <AddComment postid={params.postid}  />
+                {/* Display post content */}
+                {bodyParts.map((part: string,index: number) => (
+                    <article key={index} className='font-light my-4'>
+                        { part }
+                    </article>
+                ))}
+            </section>
+            <section className='mt-16'>
+                {/* Render form to add a comment to the post */}
+                <AddComment postid={params.postid}  />
                     
-                    {/* Map through and render existing comments in the CommentCard component */}
-                    <h2 className='mx-8 sm:w-3/4 lg:w-1/2 sm:mx-auto text-2xl font-semi-bold mt-16'>All Comments</h2>
+                {/* Map through and render existing comments in the CommentCard component */}
+                <h2 className='mx-8 sm:w-3/4 lg:w-1/2 sm:mx-auto text-2xl font-semi-bold mt-16'>All Comments</h2>
 
-                    {post.data.comments.map((comment: Comment) => (
-                        <CommentCard key={comment._id} comment={comment} />
-                    ))}
-                </section>
-            </main>
-        </>
-    )
-}
+                {post.data.comments.map((comment: Comment) => (
+                    <CommentCard key={comment._id} comment={comment} />
+                ))}
+            </section>
+        </main>
+    );
+};

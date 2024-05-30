@@ -1,5 +1,4 @@
 import PostCard, { Post } from "./components/postCard";
-import Header from "./components/header";
 
 // Function to fetch all posts from the API
 const FetchAllPosts = async () => {
@@ -37,22 +36,17 @@ export default async function Home() {
   const allposts = await FetchAllPosts();
 
   return (
-    <>
-      {/* Render header component */}
-      <Header />
-      {/* Main component */}
-      <main>
-        {/* Check if posts exist */}
-        {allposts ? (
-          // Map through posts and render PostCard component for each
-          allposts.data.map((post: Post) => (
+    <main>
+      {/* Check if posts exist */}
+      {allposts ? (
+        // Map through posts and render PostCard component for each
+        allposts.data.map((post: Post) => (
             <PostCard key={post._id} post={post} />
           ))
         ) : (
           // Display message if no posts exist
           <p className="text-center mt-20 text-2xl">No post created yet!</p>
-        ) }
-      </main>
-    </>
+      ) }
+    </main>
   );
-}
+};
